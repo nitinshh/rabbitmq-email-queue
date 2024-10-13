@@ -4,7 +4,7 @@ const { generateRandomEmail } = require('./emailGenerator');
 
 async function addEmailsToQueue(count) {
   try {
-    const connection = await amqp.connect(config.rabbitmq.url); // Correct RabbitMQ URL
+    const connection = await amqp.connect(config.rabbitmq.url);
     const channel = await connection.createChannel();
     
     // Ensure the queue name matches config.rabbitmq.queue
